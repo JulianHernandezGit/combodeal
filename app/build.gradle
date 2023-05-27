@@ -4,7 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.firebase.crashlytics'
     id 'com.google.gms.google-services'
-id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 def koin_version = "2.1.6"
@@ -16,7 +16,7 @@ def glideVersion = '4.11.0'
 
 android {
     compileSdkVersion 33
-    buildToolsVersion "30.0.3"
+    buildToolsVersion '33.0.0'
 
     defaultConfig {
         applicationId "com.combodeal.app"
@@ -45,20 +45,23 @@ android {
     buildFeatures {
         dataBinding true
     }
+    namespace 'com.combodeal.app'
 }
+
+
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0-alpha10'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-    implementation "androidx.activity:activity-ktx:1.6.1"
-    implementation "androidx.fragment:fragment-ktx:1.5.5"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'androidx.activity:activity-ktx:1.8.0-alpha04'
+    implementation 'androidx.fragment:fragment-ktx:1.6.0-rc01'
 
-    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'com.google.android.material:material:1.10.0-alpha03'
 
     implementation "io.insert-koin:koin-core:$koin_version"
     implementation "io.insert-koin:koin-core-ext:$koin_version"
@@ -70,29 +73,32 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
     implementation "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    testImplementation 'junit:junit:4.13.2.'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     implementation("androidx.security:security-crypto:1.0.0")
     implementation "com.airbnb.android:lottie:3.4.0"
 
-    implementation 'com.facebook.android:facebook-login:8.1.0'
-    implementation 'com.google.android.gms:play-services-auth:19.2.0'
-    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.2.6'
-    implementation 'com.google.firebase:firebase-analytics-ktx:20.0.2'
+    implementation 'com.facebook.android:facebook-login:16.0.1'
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
+    implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.3.0'
     implementation 'com.dhiwise:endless-viewpager:1.0.0'
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
-    implementation 'com.google.android.gms:play-services-auth-api-phone:17.5.1'
-    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
     implementation 'com.vmadalin:easypermissions-ktx:0.1.0'
+    def lifecycle_version = "2.2.0"
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
 }
 
 

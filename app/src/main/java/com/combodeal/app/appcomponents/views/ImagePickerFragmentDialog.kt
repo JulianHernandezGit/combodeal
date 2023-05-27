@@ -276,7 +276,7 @@ class ImagePickerFragmentDialog : BottomSheetDialogFragment(),
      * if permission is denied by the user this method is invoke, here we are handling our callback [onPermissionResultCallback],
      * also we are handling Open Setting Dialog to allow permission
      */
-    override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {
+    fun onPermissionsDenied(requestCode: Int, perms: List<String>) {
         if (EasyPermissions.somePermissionPermanentlyDenied(
                 this@ImagePickerFragmentDialog,
                 *perms.toTypedArray()
@@ -293,7 +293,7 @@ class ImagePickerFragmentDialog : BottomSheetDialogFragment(),
      * callback method of [EasyPermissions.PermissionCallbacks]
      * if permission is granted by the user this method is invoke, here we are handling our callback [onPermissionResultCallback]
      */
-    override fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
+    fun onPermissionsGranted(requestCode: Int, perms: List<String>) {
         onPermissionResultCallback?.invoke(true)
     }
 
